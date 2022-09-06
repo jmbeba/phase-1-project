@@ -27,7 +27,7 @@ html{
     justify-content: space-around;
     background-color: #FAF7F2;
     position: absolute;
-    z-index: 99;
+    z-index: 2;
 }
 
 .logo{
@@ -101,6 +101,70 @@ html{
     color: #FF652C;
 }
 
+.cart-details{
+    position: absolute;
+    z-index: 3;
+    width: 20%;
+    height: auto;
+    top: 10%;
+    right: 20%;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    color: #FF652C;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+.cart-element-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline:3px ;
+    padding: 3px 0;
+}
+
+.quantity{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.quantity-icons span, .cart-element-header span{
+    margin-inline: 5px;
+    padding: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-element-header span{
+    padding: 5px;
+}
+
+.quantity-icons span:hover, .cart-element-header span:hover{
+    background-color:#E6E6E3;
+}
+
+.quantity-price{
+    color: black;
+    font-weight: 400;
+    padding-inline: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line{
+    margin: 3px 0;
+}
+
+.display{
+    opacity: 1;
+}
+
 .login-signup{
     font-size: 16px;
     display: flex;
@@ -135,14 +199,15 @@ html{
 
 .hero button{
     margin-top: 60px;
-    margin-left: 30px;
+    margin-left: 190px;
 }
 
 .welcome-text{
-    font-size: 50px;
+    font-size: 72px;
     font-weight: 700;
     width: 25%;
-    margin-top: 150px;
+    margin-top: 170px;
+    margin-left: 120px;
 }
 
 .welcome-text span{
@@ -228,6 +293,7 @@ html{
 }
 
 .shoe-name-price{
+    padding-top: 5px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -329,23 +395,6 @@ html{
     font-size: 16px;
 }
 
-.login-signup-form{
-    padding: 50px 40px;
-    color: #FF652C;
-    font-size: 20px;
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid red;
-    gap: 30px;
-    background-color: #FAF7F2;
-    position: fixed;
-    top: 30%;
-    left: 40%;
-    z-index: 100;
-}
-
 .login-signup-input{
     width: 100%;
     border: none;
@@ -371,14 +420,6 @@ html{
     color: #FF652C;
     font-weight: 600;
     cursor: pointer;
-}
-
-.hide{
-    opacity: 0;
-}
-
-.blur{
-    filter: blur(120px);
 }
 
 .like{

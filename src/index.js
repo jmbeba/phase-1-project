@@ -1,13 +1,5 @@
 document.addEventListener("DOMContentLoaded",() => {
 
-    const login = document.getElementById("login");
-    const loginForm = document.getElementById("login-form");
-    loginForm.classList.add("hide");
-    login.addEventListener("click",() => {
-        loginForm.classList.toggle("hide")
-        document.body.classList.toggle("blur");
-    })
-
     const sneakers = {
         name : "trial",
         "v":1
@@ -15,12 +7,19 @@ document.addEventListener("DOMContentLoaded",() => {
 
     const navIcons = document.querySelectorAll(".nav-icons");
     const featuredCards = document.getElementById("featured-cards");
+    const cartDetails = document.getElementById("cart-details");
     console.log(navIcons);
     navIcons.forEach((icon) => {
         console.log(icon);
         icon.addEventListener("click",() => {
             icon.classList.toggle("nav-icon-clicked")
         })
+    })
+
+    navIcons[1].addEventListener("click",() => {
+        console.log("clicked");
+        cartDetails.classList.toggle("display")
+    })
 
         const options = {
             method: 'GET',
@@ -87,6 +86,24 @@ document.addEventListener("DOMContentLoaded",() => {
                     btn.classList.add("add-cart-btn");
                     btn.textContent = "Add to cart"
 
+                    btn.addEventListener("click",() => {
+                        const shoeName = document.createElement("h4");
+                        shoeName.textContent = name;
+                        const div = document.createElement("div");
+                        div.classList.add("quantity-price");
+                        const quantityP = document.createElement("p");
+                        quantityP.textContent = "x1";
+                        const priceP = document.createElement("p");;
+                        priceP.textContent = `$${price}`;
+                        const hr = document.createElement("hr");
+                        hr.classList.add("line");
+                        div.appendChild(quantityP);
+                        div.appendChild(priceP);
+                        cartDetails.appendChild(shoeName);
+                        cartDetails.appendChild(div)
+                        cartDetails.appendChild(hr);
+                    })
+
                     anotherArticle.appendChild(h4);
                     anotherArticle.appendChild(btn)
                     
@@ -100,7 +117,6 @@ document.addEventListener("DOMContentLoaded",() => {
                 })
             })
             .catch(err => console.error(err));
-    })
 })
 
 //description,id,image,name,price,quantity
