@@ -100,6 +100,12 @@ document.addEventListener("DOMContentLoaded",() => {
                         const trashIcon = document.createElement("i");
                         trashIcon.classList.add("fa-solid");
                         trashIcon.classList.add("fa-trash");
+
+                        trashSpan.addEventListener("click",(e) => {
+                            console.log(cartElement);
+                            cartElement.remove();
+                        })
+
                         const quantityPrice = document.createElement("div");
                         quantityPrice.classList.add("quantity-price");
                         const quantityDiv = document.createElement("div");
