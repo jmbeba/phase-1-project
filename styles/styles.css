@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.header-hero{
+    padding:25px 35px;
+    width: 100%;
+    background-color: #FAF7F2;
+    height: 100vh;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FAF7F2;
+    position: absolute;
+    z-index: 99;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 700;   
+}
+
+.logo-text{
+    color: black;
+}
+
+.logo-end{
+    color: #FF652C;
+}
+
+.container{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list{
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-list li{
+    list-style: none;
+    position: relative;
+}
+
+.nav-list li:hover::after{
+    transform: scale(1);
+}
+
+.nav-list li::after{
+    content: "";
+    position: absolute;
+    display: block;
+    transform: scale(0);
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 3px solid #FF652C;
+    border-radius: 25px;
+    transition: transform 0.25s linear;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-buttons{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-icons{
+    cursor: pointer;
+}
+
+.nav-icon-clicked, .orange-icon{
+    color: #FF652C;
+}
+
+.login-signup{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.btn{
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    background-color:#FF652C;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.hero{
+    margin-left: 35px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.hero button{
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+.welcome-text{
+    font-size: 50px;
+    font-weight: 700;
+    width: 25%;
+    margin-top: 150px;
+}
+
+.welcome-text span{
+    color: #FF652C;
+}
+
+.right-image{
+    overflow-y: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 66%;
+    height: 100vh;
+    top: 15%;
+    right: 0;
+}
+
+.img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.featured{
+    background-color: #918980;
+    color: white;
+    padding: 40px 80px;
+    position: relative;
+    z-index: 100;
+}
+
+#new-arrivals{
+    background-color: #FAF7F2;
+    color: #FF652C;
+}
+
+.featured-title{
+    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 10px;
+}
+
+#new-arrivals-title{
+    text-shadow: none;
+}
+
+.featured-title2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 144px;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 5;
+}
+
+#new-arrivals-title2{
+    color: rgba(255, 101, 44, 0.05);
+}
+
+.featured-cards{
+    display: grid;
+    padding: 80px 35px;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 120px;
+    gap: 30px;
+}
+
+.card{
+    height: auto;
+    cursor: pointer;
+    cursor: pointer;
+}
+
+
+.card-image{
+    max-width: 100%;
+    height:auto;   
+    position: relative;
+}
+
+.shoe-name-price{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shoe-name{
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.add-cart-btn{
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.contact-text{
+    padding-top: 60px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+
+.contact-form{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contact-input{
+    margin-top: 10px;
+    padding: 15px 30px;
+    width: 40%;
+    border: 2px solid white;
+    background-color: #918980;
+    color: white;
+    border-radius:8px;
+    transition: border 0.1s ease-in;
+}
+
+.contact-input::placeholder{
+    color: white;
+    font-size: 18px;
+}
+
+.contact-input:focus{
+    outline: none;
+    border: 3px solid white;
+}
+
+#submit{
+    color: #FF652C;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.footer{
+    padding:25px 75px;
+    width: 100%;
+    background-color: #FAF7F2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+
+.quick-links-title{
+    position: relative;
+    font-size: 20px;
+}
+
+.quick-links-title::after{
+    content: '';
+    display: inline-block;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 4px solid #FF652C;
+}
+
+.list-links li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.login-signup-form{
+    padding: 50px 40px;
+    color: #FF652C;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+    gap: 30px;
+    background-color: #FAF7F2;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    z-index: 100;
+}
+
+.login-signup-input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #FF652C;
+}   
+
+.login-signup-input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #FF652C;
+}
+
+.login-signup-input::placeholder{
+    color: #FF652C;
+}
+
+#login-signup-submit{
+    width: 100%;
+    padding: 7px 0;
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid #FF652C;
+    color: #FF652C;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.blur{
+    filter: blur(120px);
+}
+
+.like{
+    position: absolute;
+    color: white;
+    bottom: 4%;
+    right: 5%;
+    z-index: 99;
+}
+
+.like-clicked{
+    color: red;
+}

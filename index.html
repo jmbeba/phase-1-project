@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/ec6b6ca4a0.js" crossorigin="anonymous"></script>
+    <script src="./src/index.js"></script>
+    <title>Shoeit.</title>
+</head>
+<body>
+    <section id="home" class="header-hero">
+        <header class="header">
+            <a href="#" class="logo">
+                <span class="logo-text">Shoeit</span>
+                <span class="logo-end">.</span>
+            </a>
+            <div class="container">
+                <nav class="nav">
+                    <ul class="nav-list">
+                       <li><a href="#home">Home</a></li>
+                       <li><a href="#featured">Featured</a></li>
+                       <li><a href="#contact-us">Contact us</a></li>
+                    </ul>
+                </nav>
+                <figure class="nav-buttons">
+                    <span class="nav-icons">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <span class="nav-icons">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                </figure>
+                <section class="login-signup">
+                    <a id="login" class="login" href="#">Login</a>
+                    <button class="btn">Sign up</button>
+                </section>
+            </div>  
+        </header>
+        <article class="hero">
+            <h1 class="welcome-text">
+                HOUSE
+                <span>OF</span>
+                 SNEAKERS
+            </h1>
+            <a href="#featured">
+                <button class="btn">
+                    Sneak-me in!
+                </button>
+            </a>
+        </article>
+        <figure class="right-image">
+            <img src="./assets/My project-1.png" alt="fashion sneakers" class="img">
+        </figure>
+    </section>
+    <section id="featured" class="featured"> 
+        <h2 class="featured-title">FEATURED</h2>
+        <h2 class="featured-title2">FEATURED</h2>
+        <section id="featured-cards" class="featured-cards">
+            
+        </section>
+    </section>
+    <section id="new-arrivals" class="featured"> 
+        <h2 id="new-arrivals-title"  class="featured-title">NEW ARRIVALS</h2>
+        <h2 id="new-arrivals-title2" class="featured-title2">NEW ARRIVALS</h2>
+        <section id="featured-cards" class="featured-cards">
+            <article class="card">
+                <figure class="card-image">
+                    <img src="./assets/pexels-ray-piedra-1464625.jpg" class="img" alt="piedra">
+                    <span class="like">
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
+                </figure>
+                <h2 class="shoe-name">Shoe name</h2>
+                <article class="shoe-name-price">
+                    <h4 class="shoe-price">price</h4>
+                    <button class="add-cart-btn">Add to cart</button>
+                </article>
+            </article>
+        </section>
+    </section>
+    <section id="contact-us" class="featured"> 
+        <h2 class="featured-title">CONTACT US</h2>
+        <h2 class="featured-title2">CONTACT US</h2>
+        <p class="contact-text">
+            Feel free to contact us anytime. We will respond as soon as we can.
+        </p>
+        <form class="contact-form">
+            <input class="contact-input" id="name" placeholder="Enter name..." type="text">
+            <input class="contact-input" id="email" placeholder="Enter email..." type="email">
+            <textarea class="contact-input" placeholder="Enter message..." type="text"></textarea>
+            <input class="contact-input" id="submit" name="Submit" type="submit">
+        </form>
+    </section>
+    <footer class="footer">
+        <a href="#" class="logo">
+            <span class="logo-text">Shoeit</span>
+            <span class="logo-end">.</span>
+        </a>
+        <section class="quick-links">
+            <h3 class="quick-links-title">Quick links</h3>
+            <ul class="list-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
+            </ul>
+        </section>
+        <section class="quick-links">
+            <h3 class="quick-links-title">Contact us</h3>
+            <ul class="list-links">
+                <li>
+                    <span class="orange-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <a href="#">Shoe street, Nairobi Kenya.</a>
+                </li>
+                <li>
+                    <span class="orange-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    <a href="#">+254123456789</a>
+                </li>
+                <li>
+                    <span class="orange-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <a href="#">shoeit@fgmail.com</a>
+                </li>
+            </ul>
+        </section>
+        <section class="quick-links">
+            <h3 class="quick-links-title">Follow us</h3>
+            <ul class="list-links">
+                <li>
+                    <span class="orange-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </span>
+                    <a href="#">Facebook</a>
+                </li>
+                <li>
+                    <span class="orange-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
+                    <a href="#">Instagram</a>
+                </li>
+                <li>
+                    <span class="orange-icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </span>
+                    <a href="#">Twitter</a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+    <article id="login-form" class="login-signup">
+        <form action="" class="login-signup-form">
+            <h3 class="login-signup-title">Login</h3>
+            <input type="email" placeholder="Email" class="login-signup-input">
+            <input type="password" placeholder="Password" class="login-signup-input">
+            <input type="submit" name="submit" id="login-signup-submit" value="Login">
+        </form>
+    </article>
+</body>
+</html>
