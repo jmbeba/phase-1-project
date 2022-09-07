@@ -414,33 +414,6 @@ html{
     font-size: 16px;
 }
 
-/* .login-signup-input{
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #FF652C;
-}   
-
-.login-signup-input:focus{
-    border: none;
-    outline: none;
-    border-bottom: 3px solid #FF652C;
-}
-
-.login-signup-input::placeholder{
-    color: #FF652C;
-}
-
-#login-signup-submit{
-    width: 100%;
-    padding: 7px 0;
-    background-color: white;
-    border-radius: 6px;
-    border: 2px solid #FF652C;
-    color: #FF652C;
-    font-weight: 600;
-    cursor: pointer;
-} */
-
 .like{
     position: absolute;
     color: gray;
@@ -451,4 +424,63 @@ html{
 
 .like-clicked{
     color: red;
+}
+
+@media screen and (max-width:400px) {
+
+    .featured{
+        background-color: #918980;
+        color: white;
+        padding: 20px 5px;
+        position: relative;
+        z-index: 100;
+    }
+
+    .featured-title{
+        margin-left: 15px;
+        font-size: 24px;
+        line-height: 48px;
+    }
+
+    .featured-title2{
+        margin-left: 15px;
+        font-size: 40px;
+        line-height: 110px;
+    }
+
+    .featured-cards{
+        display: grid;
+        padding-top: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact-us{
+        padding-inline: 20px;
+    }
+
+    .contact-text{
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .contact-form{
+        padding-top: 20px;
+    }
+    
+    .contact-input{
+        margin-top: 5px;
+        padding: 15px 30px;
+        width: 80%;
+    }
+
+    #submit{
+        font-size: 18px;
+    }
+
+    .footer{
+        padding:20px 30px;
+        flex-direction: column;
+        gap: 20px;
+    }
 }

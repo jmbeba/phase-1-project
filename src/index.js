@@ -61,12 +61,6 @@ document.addEventListener("DOMContentLoaded",() => {
         cartDetails.classList.toggle("display")
     })
 
-    cartDetails.addEventListener("onmouseleave",() => {
-        setTimeout(()=>{
-            cartDetails.classList.remove("display")
-        },500)
-    })
-
     fetch("http://localhost:3000/cart").then(res => res.json()).then(data => {
         data.map(({name,price,quantity,id}) => {
             console.log(name);
