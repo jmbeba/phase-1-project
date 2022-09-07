@@ -89,7 +89,7 @@
       <h2 class="featured-title2">FEATURED</h2>
       <section id="featured-cards" class="featured-cards"></section>
     </section>
-    <section id="new-arrivals" class="featured">
+    <!-- <section id="new-arrivals" class="featured">
       <h2 id="new-arrivals-title" class="featured-title">NEW ARRIVALS</h2>
       <h2 id="new-arrivals-title2" class="featured-title2">NEW ARRIVALS</h2>
       <section id="featured-cards" class="featured-cards">
@@ -111,14 +111,14 @@
           </article>
         </article>
       </section>
-    </section>
+    </section> -->
     <section id="contact-us" class="featured">
-      <h2 class="featured-title">CONTACT US</h2>
-      <h2 class="featured-title2">CONTACT US</h2>
+      <h2 id="contact-title" class="featured-title">CONTACT US</h2>
+      <h2 id="contact-title2" class="featured-title2">CONTACT US</h2>
       <p class="contact-text">
         Feel free to contact us anytime. We will respond as soon as we can.
       </p>
-      <form class="contact-form">
+      <form id="contact-form" class="contact-form">
         <input
           class="contact-input"
           id="name"
@@ -132,6 +132,7 @@
           type="email"
         />
         <textarea
+        id="message"
           class="contact-input"
           placeholder="Enter message..."
           type="text"
@@ -141,7 +142,7 @@
     </section>
     <footer class="footer">
       <a href="#" class="logo">
-        <span class="logo-text">Shoeit</span>
+        <span id="footer-logo" class="logo-text">Shoeit</span>
         <span class="logo-end">.</span>
       </a>
       <section class="quick-links">

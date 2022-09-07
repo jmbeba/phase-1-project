@@ -189,7 +189,7 @@ html{
 }
 
 .hero{
-    margin-left: 35px;
+    margin-left: 20px;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
@@ -199,15 +199,16 @@ html{
 
 .hero button{
     margin-top: 60px;
-    margin-left: 190px;
+    margin-left: 90px;
 }
 
 .welcome-text{
-    font-size: 72px;
+    font-size: 62px;
     font-weight: 700;
+    overflow: visible;
     width: 25%;
-    margin-top: 170px;
-    margin-left: 120px;
+    margin-top: 140px;
+    margin-left: 20px;
 }
 
 .welcome-text span{
@@ -313,6 +314,20 @@ html{
     border: none;
     font-weight: 600;
     font-size: 16px;
+    cursor: pointer;
+}
+
+#contact-us{
+    background-color: #FAF7F2;
+    color: #FF652C;
+}
+
+#contact-title{
+    text-shadow: none;
+}
+
+#contact-title2{
+    color: rgba(255, 101, 44, 0.05);
 }
 
 .contact-text{
@@ -321,7 +336,7 @@ html{
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
-    color: #FFFFFF;
+    color: #FF652C;
 }
 
 .contact-form{
@@ -336,26 +351,25 @@ html{
     margin-top: 10px;
     padding: 15px 30px;
     width: 40%;
-    border: 2px solid white;
-    background-color: #918980;
-    color: white;
+    border: 2px solid #FF652C;
+    background-color: white;
+    color: black;
     border-radius:8px;
     transition: border 0.1s ease-in;
 }
 
 .contact-input::placeholder{
-    color: white;
+    color: black;
     font-size: 18px;
 }
 
 .contact-input:focus{
     outline: none;
-    border: 3px solid white;
 }
 
 #submit{
-    color: #FF652C;
-    background-color: white;
+    color: white;
+    background-color: #FF652C;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 20px;
@@ -366,11 +380,16 @@ html{
 .footer{
     padding:25px 75px;
     width: 100%;
-    background-color: #FAF7F2;
+    background-color: #918980;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     padding-bottom: 50px;
+    color: white;
+}
+
+#footer-logo{
+    color: white;
 }
 
 .quick-links-title{
@@ -390,12 +409,12 @@ html{
 
 .list-links li a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: 600;
     font-size: 16px;
 }
 
-.login-signup-input{
+/* .login-signup-input{
     width: 100%;
     border: none;
     border-bottom: 2px solid #FF652C;
@@ -420,11 +439,11 @@ html{
     color: #FF652C;
     font-weight: 600;
     cursor: pointer;
-}
+} */
 
 .like{
     position: absolute;
-    color: white;
+    color: gray;
     bottom: 4%;
     right: 5%;
     z-index: 99;

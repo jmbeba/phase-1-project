@@ -1,45 +1,17 @@
 document.addEventListener("DOMContentLoaded",() => {
 
-    const sneakers = {
-        name : "trial",
-        "v":1
-    }
-
-    const navIcons = document.querySelectorAll(".nav-icons");
-    const featuredCards = document.getElementById("featured-cards");
-    const cartDetails = document.getElementById("cart-details");
-    console.log(navIcons);
-    navIcons.forEach((icon) => {
-        console.log(icon);
-        icon.addEventListener("click",() => {
-            icon.classList.toggle("nav-icon-clicked")
-        })
-    })
-
-    navIcons[1].addEventListener("click",() => {
-        console.log("clicked");
-        cartDetails.classList.toggle("display")
-    })
-
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'e3e1ca0d55msh272fb872733a7b1p11855cjsnbe399f4e2f4e',
-                'X-RapidAPI-Host': 'shoes-collections.p.rapidapi.com'
-            }
-        };
+    // const options = {
+        //     method: 'GET',
+        //     headers: {
+        //         'X-RapidAPI-Key': 'e3e1ca0d55msh272fb872733a7b1p11855cjsnbe399f4e2f4e',
+        //         'X-RapidAPI-Host': 'shoes-collections.p.rapidapi.com'
+        //     }
+        // };
         
         //api end point used to populate db
-        //fetch('https://shoes-collections.p.rapidapi.com/shoes', options)
-        
-
-        fetch('http://localhost:3000/data')
-            .then(response => response.json())
-            .then(data => {
-                const sneakers = data.sneakers;
-
-                //populate the db.json
-                // fetch("http://localhost:3000/data",{
+        //fetch('https://shoes-collections.p.rapidapi.com/shoes', options).then(res => res.json()).then(sneakers => {
+            //populate the db.json
+                // fetch("http://localhost:3000",{
                 //     method:"POST",
                 //     headers:{
                 //         "Content-Type":"application/json",
@@ -49,7 +21,58 @@ document.addEventListener("DOMContentLoaded",() => {
                 //         sneakers
                 //     })
                 // }).then(res => res.json()).then(data => console.log(data));
+        // })
 
+    const navIcons = document.querySelectorAll(".nav-icons");
+    const featuredCards = document.getElementById("featured-cards");
+    const cartDetails = document.getElementById("cart-details");
+    const contactForm = document.getElementById("contact-form");
+    const contactName = document.getElementById("name");
+    const contactEmail = document.getElementById("email");
+    const contactMessage = document.getElementById("message");
+
+    contactForm.addEventListener("submit",(e) => {
+        fetch("http://localhost:3000/messages",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                "Accept":"application/json"
+            },
+            body: JSON.stringify({
+                "name": contactName.value,
+                "email":contactEmail.value,
+                "message": contactMessage.value
+            })
+        }).then(res => res.json()).then(data => {
+            console.log(data);
+            contactForm.reset();
+        })
+    })
+
+    console.log(navIcons);
+    navIcons.forEach((icon) => {
+        console.log(icon);
+        icon.addEventListener("click",() => {
+            icon.classList.toggle("nav-icon-clicked")
+        })
+    })
+
+    navIcons[1].addEventListener("click",() => {
+        cartDetails.classList.toggle("display")
+    })
+
+    cartDetails.addEventListener("onmouseleave",() => {
+        setTimeout(()=>{
+            cartDetails.classList.remove("display")
+        },500)
+    })
+
+        
+        
+        fetch('http://localhost:3000/sneakers')
+            .then(response => response.json())
+            .then(sneakers => {
+                
                 sneakers.map(({description,id,image,name,price,quantity}) => {
                     const article = document.createElement("article");
                     article.classList.add("card");
@@ -101,7 +124,7 @@ document.addEventListener("DOMContentLoaded",() => {
                         trashIcon.classList.add("fa-solid");
                         trashIcon.classList.add("fa-trash");
 
-                        trashSpan.addEventListener("click",(e) => {
+                        trashSpan.addEventListener("click",() => {
                             console.log(cartElement);
                             cartElement.remove();
                         })
@@ -176,7 +199,6 @@ document.addEventListener("DOMContentLoaded",() => {
 
                 })
             })
-            .catch(err => console.error(err));
+        .catch(err => console.error(err));
+        
 })
-
-//description,id,image,name,price,quantity
