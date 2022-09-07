@@ -82,17 +82,17 @@ document.addEventListener("DOMContentLoaded",() => {
                         trashIcon.classList.add("fa-solid");
                         trashIcon.classList.add("fa-trash");
 
-                        // trashSpan.addEventListener("click",() => {
-                        //     cartElement.remove();
+                        trashSpan.addEventListener("click",() => {
+                            cartElement.remove();
                           
-                        //     fetch(`http://localhost:3000/cart/${id}`,{
-                        //         method:"DELETE",
-                        //         headers:{
-                        //             "Content-Type":"application/json",
-                        //             "Accept":"application/json"
-                        //         }
-                        //     }).then(res => res.json()).then(data => console.log(data))
-                        // })
+                            fetch(`http://localhost:3000/cart/${id}`,{
+                                method:"DELETE",
+                                headers:{
+                                    "Content-Type":"application/json",
+                                    "Accept":"application/json"
+                                }
+                            }).then(res => res.json()).then(data => console.log(data))
+                        })
 
                         const quantityPrice = document.createElement("div");
                         quantityPrice.classList.add("quantity-price");
