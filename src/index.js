@@ -67,6 +67,94 @@ document.addEventListener("DOMContentLoaded",() => {
         },500)
     })
 
+    // fetch("http://localhost:3000/cart").then(res => res.json()).then(data => {
+    //     data.map(({name,price,quantity,id}) => {
+    //         console.log(name);
+
+    //         const cartElement = document.createElement("article");
+    //                     cartElement.classList.add("cart-element");
+    //                     const cartElementHeader = document.createElement("div");
+    //                     cartElementHeader.classList.add("cart-element-header");
+    //                     const shoeName = document.createElement("h4");
+    //                     shoeName.textContent = name;
+    //                     const trashSpan = document.createElement("span");
+    //                     const trashIcon = document.createElement("i");
+    //                     trashIcon.classList.add("fa-solid");
+    //                     trashIcon.classList.add("fa-trash");
+
+    //                     // trashSpan.addEventListener("click",() => {
+    //                     //     cartElement.remove();
+                          
+    //                     //     fetch(`http://localhost:3000/cart/${id}`,{
+    //                     //         method:"DELETE",
+    //                     //         headers:{
+    //                     //             "Content-Type":"application/json",
+    //                     //             "Accept":"application/json"
+    //                     //         }
+    //                     //     }).then(res => res.json()).then(data => console.log(data))
+    //                     // })
+
+    //                     const quantityPrice = document.createElement("div");
+    //                     quantityPrice.classList.add("quantity-price");
+    //                     const quantityDiv = document.createElement("div");
+    //                     quantityDiv.classList.add("quantity");
+
+    //                     const quantityIcons = document.createElement("span");
+    //                     quantityIcons.classList.add("quantity-icons");
+    //                     const minusSpan = document.createElement("span");
+    //                     const minus = document.createElement("i");
+    //                     minus.classList.add("fa-solid");
+    //                     minus.classList.add("fa-minus");
+
+    //                     minusSpan.addEventListener("click",() => {
+    //                         quantity--;
+    //                         quantityP.textContent = `x${quantity}`;
+    //                         shoePrice = quantity * price;
+    //                         priceP.textContent = `$${shoePrice}`;
+    //                     })
+
+    //                     const plusSpan = document.createElement("span");
+    //                     const plus = document.createElement("i");
+    //                     plus.classList.add("fa-solid");
+    //                     plus.classList.add("fa-plus");
+
+    //                     plusSpan.addEventListener("click",() => {
+    //                         quantity++;
+    //                         quantityP.textContent = `x${quantity}`;
+    //                         shoePrice = quantity * price;
+    //                         priceP.textContent = `$${shoePrice}`;
+    //                     })
+
+    //                     const quantityP = document.createElement("p");
+    //                     quantityP.textContent = `x${quantity}`;
+    //                     const priceP = document.createElement("p");;
+    //                     priceP.textContent = `$${price}`;
+    //                     const hr = document.createElement("hr");
+    //                     hr.classList.add("line");
+
+                        
+                        
+    //                     cartElementHeader.appendChild(shoeName);
+    //                     trashSpan.appendChild(trashIcon);
+    //                     cartElementHeader.appendChild(trashSpan);
+    //                     quantityDiv.appendChild(quantityP);
+                        
+    //                     minusSpan.appendChild(minus);
+    //                     quantityIcons.appendChild(minusSpan);
+    //                     plusSpan.appendChild(plus);
+    //                     quantityIcons.appendChild(plusSpan);
+    //                     quantityDiv.appendChild(quantityIcons)
+    //                     quantityPrice.appendChild(quantityDiv);
+    //                     quantityPrice.appendChild(priceP);
+                        
+    //                     cartElement.appendChild(cartElementHeader);
+    //                     cartElement.appendChild(quantityPrice);
+    //                     cartElement.appendChild(hr);
+
+    //                     cartDetails.appendChild(cartElement);
+    //     })
+    // })
+
         
         
         fetch('http://localhost:3000/sneakers')
@@ -110,81 +198,21 @@ document.addEventListener("DOMContentLoaded",() => {
                     btn.textContent = "Add to cart"
 
                     btn.addEventListener("click",() => {
-                        console.log("clicked");
-                        let quantity = 1;
-                        let shoePrice = 0;
-                        const cartElement = document.createElement("article");
-                        cartElement.classList.add("cart-element");
-                        const cartElementHeader = document.createElement("div");
-                        cartElementHeader.classList.add("cart-element-header");
-                        const shoeName = document.createElement("h4");
-                        shoeName.textContent = name;
-                        const trashSpan = document.createElement("span");
-                        const trashIcon = document.createElement("i");
-                        trashIcon.classList.add("fa-solid");
-                        trashIcon.classList.add("fa-trash");
 
-                        trashSpan.addEventListener("click",() => {
-                            console.log(cartElement);
-                            cartElement.remove();
+                        fetch("http://localhost:3000/cart",{
+                            method:"POST",
+                            headers:{
+                                "Content-Type":"application/json",
+                                "Accept":"application/json"
+                            },
+                            body: JSON.stringify({
+                                "name":name,
+                                "price":price,
+                                "quantity":quantity
+                            })
+                        }).then(res => res.json()).then(data => {
+                            console.log(data);
                         })
-
-                        const quantityPrice = document.createElement("div");
-                        quantityPrice.classList.add("quantity-price");
-                        const quantityDiv = document.createElement("div");
-                        quantityDiv.classList.add("quantity");
-
-                        const quantityIcons = document.createElement("span");
-                        quantityIcons.classList.add("quantity-icons");
-                        const minusSpan = document.createElement("span");
-                        const minus = document.createElement("i");
-                        minus.classList.add("fa-solid");
-                        minus.classList.add("fa-minus");
-
-                        minusSpan.addEventListener("click",() => {
-                            quantity--;
-                            quantityP.textContent = `x${quantity}`;
-                            shoePrice = quantity * price;
-                            priceP.textContent = `$${shoePrice}`;
-                        })
-
-                        const plusSpan = document.createElement("span");
-                        const plus = document.createElement("i");
-                        plus.classList.add("fa-solid");
-                        plus.classList.add("fa-plus");
-
-                        plusSpan.addEventListener("click",() => {
-                            quantity++;
-                            quantityP.textContent = `x${quantity}`;
-                            shoePrice = quantity * price;
-                            priceP.textContent = `$${shoePrice}`;
-                        })
-
-                        const quantityP = document.createElement("p");
-                        quantityP.textContent = `x${quantity}`;
-                        const priceP = document.createElement("p");;
-                        priceP.textContent = `$${price}`;
-                        const hr = document.createElement("hr");
-                        hr.classList.add("line");
-                        
-                        cartElementHeader.appendChild(shoeName);
-                        trashSpan.appendChild(trashIcon);
-                        cartElementHeader.appendChild(trashSpan);
-                        quantityDiv.appendChild(quantityP);
-                        
-                        minusSpan.appendChild(minus);
-                        quantityIcons.appendChild(minusSpan);
-                        plusSpan.appendChild(plus);
-                        quantityIcons.appendChild(plusSpan);
-                        quantityDiv.appendChild(quantityIcons)
-                        quantityPrice.appendChild(quantityDiv);
-                        quantityPrice.appendChild(priceP);
-                        
-                        cartElement.appendChild(cartElementHeader);
-                        cartElement.appendChild(quantityPrice);
-                        cartElement.appendChild(hr);
-
-                        cartDetails.appendChild(cartElement);
                     })
 
                     anotherArticle.appendChild(h4);

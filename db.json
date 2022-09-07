@@ -207,7 +207,12 @@
       "id": 2
     }
   ],
-  "cart":[
-    
+  "cart": [
+    {
+      "name": "Wild Rider Layers Unisex Sneakers",
+      "price": 121,
+      "quantity": 1,
+      "id": 1
+    }
   ]
 }
