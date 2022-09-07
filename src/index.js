@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded",() => {
                 // }).then(res => res.json()).then(data => console.log(data));
         // })
 
-    const navIcons = document.querySelectorAll(".nav-icons");
+    const navIcon = document.querySelector(".nav-icons");
+    console.log(navIcon);
     const featuredCards = document.getElementById("featured-cards");
     const cartDetails = document.getElementById("cart-details");
     const contactForm = document.getElementById("contact-form");
@@ -49,15 +50,8 @@ document.addEventListener("DOMContentLoaded",() => {
         })
     })
 
-    console.log(navIcons);
-    navIcons.forEach((icon) => {
-        console.log(icon);
-        icon.addEventListener("click",() => {
-            icon.classList.toggle("nav-icon-clicked")
-        })
-    })
-
-    navIcons[1].addEventListener("click",() => {
+    navIcon.addEventListener("click",() => {
+        navIcon.classList.toggle("nav-icon-clicked")
         cartDetails.classList.toggle("display")
     })
 
@@ -212,30 +206,44 @@ document.addEventListener("DOMContentLoaded",() => {
                     h4.classList.add("shoe-price");
                     h4.textContent = `$${price}`;
 
-                    const btn = document.createElement("button");
-                    btn.classList.add("add-cart-btn");
-                    btn.textContent = "Add to cart"
+                    const btnDesktop = document.createElement("button");
+                    btnDesktop.classList.add("add-cart-btn");
+                    btnDesktop.classList.add("desktop");
+                    btnDesktop.textContent = "Add to cart"
 
-                    btn.addEventListener("click",() => {
+                    const btnMobile = document.createElement("button");
+                    btnMobile.classList.add("add-cart-btn");
+                    btnMobile.classList.add("mobile");
+                    const cart = document.createElement("i");
+                    cart.classList.add("fa-solid");
+                    cart.classList.add("fa-cart-shopping");
+                    btnMobile.appendChild(cart);
 
-                        fetch("http://localhost:3000/cart",{
-                            method:"POST",
-                            headers:{
-                                "Content-Type":"application/json",
-                                "Accept":"application/json"
-                            },
-                            body: JSON.stringify({
-                                "name":name,
-                                "price":price,
-                                "quantity":quantity
+                    const buttons = [btnDesktop, btnMobile];
+
+                    buttons.forEach((button) => {
+                        button.addEventListener("click",() => {
+
+                            fetch("http://localhost:3000/cart",{
+                                method:"POST",
+                                headers:{
+                                    "Content-Type":"application/json",
+                                    "Accept":"application/json"
+                                },
+                                body: JSON.stringify({
+                                    "name":name,
+                                    "price":price,
+                                    "quantity":quantity
+                                })
+                            }).then(res => res.json()).then(data => {
+                                console.log(data);
                             })
-                        }).then(res => res.json()).then(data => {
-                            console.log(data);
                         })
                     })
 
                     anotherArticle.appendChild(h4);
-                    anotherArticle.appendChild(btn)
+                    anotherArticle.appendChild(btnMobile)
+                    anotherArticle.appendChild(btnDesktop)
                     
 
                     article.appendChild(figure);

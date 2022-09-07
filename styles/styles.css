@@ -238,6 +238,7 @@ html{
     padding: 40px 80px;
     position: relative;
     z-index: 100;
+    width: 100%;
 }
 
 #new-arrivals{
@@ -426,7 +427,58 @@ html{
     color: red;
 }
 
+.mobile{
+    display: none;
+}
+
 @media screen and (max-width:400px) {
+
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .logo{
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 700;   
+    }
+
+    .nav-icons{
+        position: absolute;
+        right: 0;
+    }
+
+    #cart-details{
+        width: 75%;
+        right: 7%;
+        top: 15%;
+    }
+
+
+    .right-image{
+        width: 60%;
+        height: 50vh;
+        top: 25%;
+        right: -33%;
+    }
+
+    .welcome-text{
+        font-size: 40px;
+        width: 20%;
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+
+    .hero button{
+        margin-left: 0;
+    }
+
+    #home{
+        height: fit-content;
+    }
 
     .featured{
         background-color: #918980;
@@ -434,6 +486,7 @@ html{
         padding: 20px 5px;
         position: relative;
         z-index: 100;
+        height: fit-content;
     }
 
     .featured-title{
@@ -482,5 +535,13 @@ html{
         padding:20px 30px;
         flex-direction: column;
         gap: 20px;
+    }
+
+    .mobile{
+        display: inline-block;
+    }
+
+    .desktop{
+        display: none;
     }
 }
