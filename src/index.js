@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded",() => {
     fetch("http://localhost:3000/cart").then(res => res.json()).then(data => {
         data.map(({name,price,quantity,id}) => {
             console.log(name);
+            let shoePrice = quantity * price;
 
             const cartElement = document.createElement("article");
                         cartElement.classList.add("cart-element");
@@ -107,10 +108,22 @@ document.addEventListener("DOMContentLoaded",() => {
                         minus.classList.add("fa-minus");
 
                         minusSpan.addEventListener("click",() => {
-                            quantity--;
-                            quantityP.textContent = `x${quantity}`;
-                            shoePrice = quantity * price;
-                            priceP.textContent = `$${shoePrice}`;
+                            let newQuantity = quantity - 1;
+                          
+                            fetch(`http://localhost:3000/cart/${id}`,{
+                                method:"PATCH",
+                                headers:{
+                                    "Content-Type":"application/json",
+                                    "Accept":"application/json"
+                                },
+                                body: JSON.stringify({
+                                    "quantity":newQuantity
+                                })
+                            }).then(res => res.json()).then(data => {
+                                shoePrice = newQuantity * price;
+                                quantityP.textContent = `x${newQuantity}`;
+                                priceP.textContent = `$${shoePrice}`;
+                            })
                         })
 
                         const plusSpan = document.createElement("span");
@@ -119,16 +132,28 @@ document.addEventListener("DOMContentLoaded",() => {
                         plus.classList.add("fa-plus");
 
                         plusSpan.addEventListener("click",() => {
-                            quantity++;
-                            quantityP.textContent = `x${quantity}`;
-                            shoePrice = quantity * price;
-                            priceP.textContent = `$${shoePrice}`;
+                            let newQuantity = quantity + 1;
+                          
+                            fetch(`http://localhost:3000/cart/${id}`,{
+                                method:"PATCH",
+                                headers:{
+                                    "Content-Type":"application/json",
+                                    "Accept":"application/json"
+                                },
+                                body: JSON.stringify({
+                                    "quantity":newQuantity
+                                })
+                            }).then(res => res.json()).then(data => {
+                                shoePrice = newQuantity * price;
+                                quantityP.textContent = `x${newQuantity}`;
+                                priceP.textContent = `$${shoePrice}`;
+                            })
                         })
 
                         const quantityP = document.createElement("p");
                         quantityP.textContent = `x${quantity}`;
                         const priceP = document.createElement("p");;
-                        priceP.textContent = `$${price}`;
+                        priceP.textContent = `$${shoePrice}`;
                         const hr = document.createElement("hr");
                         hr.classList.add("line");
 
