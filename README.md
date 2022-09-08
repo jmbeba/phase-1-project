@@ -16,7 +16,7 @@ $ json-server --watch db.json
 ## Link to live site
 [https://dancing-fenglisu-a81665.netlify.app/](https://dancing-fenglisu-a81665.netlify.app/)
 
-[https://planet-false-curio.glitch.me/](https://planet-false-curio.glitch.me/)
+[https://defiant-fearless-beechnut.glitch.me/](https://defiant-fearless-beechnut.glitch.me/)
 
 ## Copyright
 CopyrightⒸ 2022 J Mbeba.
