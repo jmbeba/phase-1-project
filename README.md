@@ -13,5 +13,8 @@ Run the command  in the terminal:
 ```console
 $ json-server --watch db.json
 ```
+## Link to live site
+[https://planet-false-curio.glitch.me/](https://planet-false-curio.glitch.me/)
+
 ## Copyright
 CopyrightⒸ 2022 J Mbeba.
