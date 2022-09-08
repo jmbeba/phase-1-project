@@ -14,6 +14,8 @@ Run the command  in the terminal:
 $ json-server --watch db.json
 ```
 ## Link to live site
+[https://dancing-fenglisu-a81665.netlify.app/](https://dancing-fenglisu-a81665.netlify.app/)
+
 [https://planet-false-curio.glitch.me/](https://planet-false-curio.glitch.me/)
 
 ## Copyright
